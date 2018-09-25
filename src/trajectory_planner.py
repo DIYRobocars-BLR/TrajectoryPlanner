@@ -25,7 +25,7 @@ class TrajectoryPlanner:
         self.robot = Robot(0.5, 0.5)
         self.is_working = False # Replace with mutex after all
 
-        self.map_subscriber = rospy.Subscriber("map", OccupancyGrid, self.new_map_callback)
+        self.map_subscriber = rospy.Subscriber("projected_map", OccupancyGrid, self.new_map_callback)
         self.start_subscriber = rospy.Subscriber("initialpose", PoseWithCovarianceStamped, self.new_start_callback)
         self.goal_subscriber = rospy.Subscriber("goal", PoseStamped, self.new_goal_callback)
 
